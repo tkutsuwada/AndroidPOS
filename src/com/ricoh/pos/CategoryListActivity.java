@@ -3,6 +3,7 @@ package com.ricoh.pos;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Window;
 
 /**
  * An activity representing a list of Products. This activity has different
@@ -32,6 +33,8 @@ public class CategoryListActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_category_list);
 
 		if (findViewById(R.id.category_detail_container) != null) {

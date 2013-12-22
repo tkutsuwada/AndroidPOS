@@ -5,13 +5,12 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="12"
-        android:targetSdkVersion="14" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.ricoh.pos.MainMenuActivity"
@@ -24,23 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ricoh.pos.CategoryListActivity"
-            android:label="@string/title_category_list" >
+            android:name="com.ricoh.pos.CategoryListActivity" >
         </activity>
         <activity
             android:name="com.ricoh.pos.SalesCalenderActivity" >
         </activity>
         <activity
             android:name="com.ricoh.pos.CategoryDetailActivity"
-            android:label="@string/title_category_detail"
             android:parentActivityName=".CategoryListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CategoryListActivity" />
         </activity>
         <activity
-            android:name="com.ricoh.pos.TotalPaymentActivity"
-            android:label="@string/title_total_payment" >
+            android:name="com.ricoh.pos.TotalPaymentActivity" >
         </activity>
     </application>
 
