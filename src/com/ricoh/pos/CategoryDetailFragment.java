@@ -2,12 +2,7 @@ package com.ricoh.pos;
 
 import java.util.ArrayList;
 
-import com.ricoh.pos.data.Product;
-import com.ricoh.pos.model.ProductsManager;
-import com.ricoh.pos.model.RegisterManager;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.text.Editable;
@@ -16,13 +11,15 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.ricoh.pos.data.Product;
+import com.ricoh.pos.model.ProductsManager;
+import com.ricoh.pos.model.RegisterManager;
 
 /**
  * A fragment representing a single Category detail screen. This fragment is
@@ -59,6 +56,8 @@ public class CategoryDetailFragment extends ListFragment {
 		
 		productList = ProductsManager.getInstance().getProductsInCategory(category);
 		setListAdapter(new ListAdapter(getActivity()));
+		
+		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 	}
 
 	
@@ -79,12 +78,12 @@ public class CategoryDetailFragment extends ListFragment {
 
 	        @Override
 	        public Object getItem(int position) {
-	            return null;
+	            return productList.get(position);
 	        }
 
 	        @Override
 	        public long getItemId(int position) {
-	            return 0;
+	            return position;
 	        }
 	        
 	        @Override
@@ -111,6 +110,7 @@ public class CategoryDetailFragment extends ListFragment {
 	            
 	            ProductEditText numberOfSalesText = (ProductEditText) convertView.findViewById(R.id.numberOfSales);
 	            numberOfSalesText.setProduct(product);
+	            //numberOfSalesText.requestFocus();
 	            numberOfSalesText.setInputType(InputType.TYPE_CLASS_NUMBER);
 	            numberOfSalesText.addTextChangedListener(new NumberOfSalesWatcher(numberOfSalesText));
 

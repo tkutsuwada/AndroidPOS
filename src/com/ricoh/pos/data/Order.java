@@ -30,6 +30,11 @@ public class Order {
 	}
 	
 	public void setNumberOfOrder(int num){
+		
+		if (num < 0) {
+			throw new IllegalArgumentException("Number of order should be positive");
+		}
+		
 		this.num = num;
 	}
 	
