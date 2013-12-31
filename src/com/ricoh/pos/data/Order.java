@@ -4,7 +4,7 @@ public class Order {
 	
 	private Product product;
 	
-	private int num;
+	private int num = 0;
 	
 	public Order() {
 		// Do nothing
@@ -40,6 +40,10 @@ public class Order {
 	
 	public int getNumberOfOrder(){
 		return num;
+	}
+	
+	public String getProductCategory(){
+		return product.getCategory();
 	}
 
 	public String getProductName(){

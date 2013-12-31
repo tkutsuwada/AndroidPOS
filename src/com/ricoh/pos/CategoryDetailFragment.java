@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ricoh.pos.data.Order;
 import com.ricoh.pos.data.Product;
 import com.ricoh.pos.model.ProductsManager;
 import com.ricoh.pos.model.RegisterManager;
@@ -110,10 +111,16 @@ public class CategoryDetailFragment extends ListFragment {
 	            
 	            ProductEditText numberOfSalesText = (ProductEditText) convertView.findViewById(R.id.numberOfSales);
 	            numberOfSalesText.setProduct(product);
-	            //numberOfSalesText.requestFocus();
 	            numberOfSalesText.setInputType(InputType.TYPE_CLASS_NUMBER);
 	            numberOfSalesText.addTextChangedListener(new NumberOfSalesWatcher(numberOfSalesText));
-
+	            Order order = registerManager.findOrderOfTheProduct(product);
+	            if (order == null) {
+	            	numberOfSalesText.getEditableText().clear();
+	            } else {
+	            	int numberOfSales = order.getNumberOfOrder();
+	            	numberOfSalesText.setText(String.valueOf(numberOfSales));
+	            }
+	            
 	            return convertView; 
 	        }
 
@@ -141,14 +148,15 @@ public class CategoryDetailFragment extends ListFragment {
 		public void beforeTextChanged(CharSequence s, int start, int count,
 				int after) {
 			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void onTextChanged(CharSequence s, int start, int before,
 				int count) {
-			Product product = productEditView.getProduct();
-			registerManager.updateOrder(product, Integer.parseInt(s.toString()));
+			if (s.length() > 0) {
+				Product product = productEditView.getProduct();
+				registerManager.updateOrder(product, Integer.parseInt(s.toString()));
+			}
 		}
 		 
 	 }

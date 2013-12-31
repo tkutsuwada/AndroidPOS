@@ -36,12 +36,14 @@ public class RegisterManager {
 		orderList = new ArrayList<Order>();
 	}
 	
-	private Order findOrderOfTheProduct(Product product){
+	public Order findOrderOfTheProduct(Product product){
+		
 		for (Order order : orderList) {
-			if (order.equals(product.getName())) {
+			if (order.getProductCategory().equals(product.getCategory()) && order.getProductName().equals(product.getName())) {
 				return order;
 			}
 		}
+		
 		// Not Found
 		return null;
 	}

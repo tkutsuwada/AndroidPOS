@@ -23,7 +23,7 @@ public class ProductsManager {
 		// Food
 		String foodCategory = "Food";
 		for (int i=0; i<10; i++) {
-			Product product = new Product(foodCategory, "product" + i);
+			Product product = new Product(foodCategory, "food" + i);
 			product.setProductImagePath("sample0" + (21 + i));
 			addNewProductInCategory(foodCategory, product);
 		}
@@ -31,7 +31,7 @@ public class ProductsManager {
 		// Health
 		String healthCategory = "Health";
 		for (int i=0; i<7 ; i++) {
-			Product product = new Product(healthCategory, "product" + i);
+			Product product = new Product(healthCategory, "health" + i);
 			product.setProductImagePath("sample0" + (31 + i));
 			addNewProductInCategory(healthCategory, product);
 		}
