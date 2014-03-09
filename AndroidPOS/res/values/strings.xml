@@ -23,4 +23,5 @@
     <string name="zero_order_error">The number of order is 0</string>
     <string name="title_oneday_total_sales">Total Sales</string>
     <string name="title_oneday_total_revenue">Total Revenue</string>
+    <string name="original_total">Payment</string>
 </resources>

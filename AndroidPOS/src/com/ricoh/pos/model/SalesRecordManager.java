@@ -76,6 +76,8 @@ public class SalesRecordManager {
 		return totalRevenue;
 	}
 	
+	//public ArrayList<Product> getProductsSoled
+	
 	private boolean areSameDay(Date date1, Date date2){
 		Calendar cal1 = Calendar.getInstance();
 		cal1.setTime(date1);
