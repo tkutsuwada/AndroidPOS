@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RicohPOS</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_category_list">Products</string>
+    <string name="title_category_detail">Category Detail</string>
+    <string name="title_total_payment">Total</string>
+    <string name="category_title_default">ALL</string>
+    <string name="sync_success">Success to syncronize!</string>
+    <string name="sd_import_error">Failed to import from SD!</string>
+    <string name="sd_export_error">Failed to export to SD!</string>
+    <string name="dialog_data_syncro_message">Synchronizing, please wait...</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="price_down">Price Down</string>
+    <string name="price_label">Price</string>
+    <string name="original_cost_label">Cost</string>
+    <string name="currency_india">Rp</string>
+    <string name="number_tag">X</string>
+    <string name="discount_error">Discount value is larger than total amount</string>
+    <string name="discount">Discount</string>
+    <string name="zero_order_error">The number of order is 0</string>
+    <string name="title_oneday_total_sales">Total Sales</string>
+    <string name="title_oneday_total_revenue">Total Revenue</string>
+</resources>
